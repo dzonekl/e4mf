@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_xQ298KAxEeK9y_k9g5Mqqg">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_zv3XAKAxEeK9y_k9g5Mqqg" featurename="commands" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:Command" xmi:id="_h1FDEKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.undo" commandName="%_UI_Undo_menu_item" description="%_UI_Undo_menu_item_simple_description"/>
+    <elements xsi:type="commands:Command" xmi:id="_iPsigKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.redo" commandName="%_UI_Redo_menu_item"/>
+    <elements xsi:type="commands:Command" xmi:id="_jQsFcKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.cut" commandName="%_UI_Cut_menu_item"/>
+    <elements xsi:type="commands:Command" xmi:id="_jj6jcKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.copy" commandName="%_UI_Copy_menu_item"/>
+    <elements xsi:type="commands:Command" xmi:id="_jzcNMKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.paste" commandName="%_UI_Paste_menu_item"/>
+    <elements xsi:type="commands:Command" xmi:id="_kEh9MKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.delete" commandName="%_UI_Delete_menu_item"/>
+    <elements xsi:type="commands:Command" xmi:id="_kSvYUKBKEeK9y_k9g5Mqqg" elementId="org.eclipse.ui.edit.selectAll" commandName="Select All"/>
+    <elements xsi:type="commands:Command" xmi:id="_SA1DAKBREeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.command.validateCommand" commandName="%_UI_Validate_menu_item" description="%_UI_Validate_simple_description"/>
+    <elements xsi:type="commands:Command" xmi:id="_lZ3v8KCAEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.command.control" commandName="%_UI_ControlCommand_label"/>
+    <elements xsi:type="commands:Command" xmi:id="_BYPp4KCCEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.command.loadResource" commandName="%_UI_LoadResource_menu_item" description="%_UI_LoadResource_menu_item_description"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ifcj0KBMEeK9y_k9g5Mqqg" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.edit">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_oEgu4KBMEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.undo" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/undo_edit.gif" command="_h1FDEKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_oeDQQKBMEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.redo" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/redo_edit.gif" command="_iPsigKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:MenuSeparator" xmi:id="_r4QtUKBMEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.menuseparator.0"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_o_GH0KBMEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.cut" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/cut_edit.gif" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_uHsj4KBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.copy" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/copy_edit.gif" command="_jj6jcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_ulUUAKBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.paste" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/paste_edit.gif" command="_jzcNMKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:MenuSeparator" xmi:id="_veewoKBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.menuseparator.1"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_xK3Z8KBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.delete" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/etool16/delete_edit.gif" command="_kEh9MKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_xvwPsKBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.selectAll" iconURI="" command="_kSvYUKBKEeK9y_k9g5Mqqg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DebLsKBgEeKWE8rOHgFS-g" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.emf" positionInList="before:org.eclipse.emf.examples.library.e4editor.menuseparator.model.additions">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_J6pBMKBgEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.validate" command="_SA1DAKBREeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_jGvaQKCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.control" label="%_UI_Control_menu_item" command="_lZ3v8KCAEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:MenuSeparator" xmi:id="_7SEV0KCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.menuseparator.loadResource"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_PzUzYKCCEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.loadResource" command="_BYPp4KCCEeKWE8rOHgFS-g"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Nc2xcKBlEeKWE8rOHgFS-g" featurename="bindingTables" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:BindingTable" xmi:id="_RmxNIKBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.bindingtable.0" bindingContext="_Y-awIKBlEeKWE8rOHgFS-g">
+      <bindings xmi:id="_d6aJAKBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.keybinding.1" keySequence="M1+Z" command="_h1FDEKBKEeK9y_k9g5Mqqg"/>
+      <bindings xmi:id="_dHVGQKBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.keybinding.0" keySequence="M1+M2+Z" command="_iPsigKBKEeK9y_k9g5Mqqg"/>
+      <bindings xmi:id="_lrXj4KBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.keybinding.2" keySequence="M1+X" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
+      <bindings xmi:id="_nzUu4KBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.keybinding.3" keySequence="M1+C" command="_jj6jcKBKEeK9y_k9g5Mqqg"/>
+      <bindings xmi:id="_p7fVQKBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.keybinding.4" keySequence="M1+V" command="_jzcNMKBKEeK9y_k9g5Mqqg"/>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_VtkDYKBlEeKWE8rOHgFS-g" featurename="bindingContexts">
+    <elements xsi:type="commands:BindingContext" xmi:id="_Y-awIKBlEeKWE8rOHgFS-g" elementId="org.eclipse.ui.contexts.window" name="Window"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Z1j3oKEiEeKWZrq3lrURUg" featurename="handlers" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:Handler" xmi:id="_elFh0KEiEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.0" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CopyHandler" command="_jj6jcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_FntIIKErEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.1" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.PasteHandler" command="_jzcNMKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_zkTmkKFKEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.2" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CutHandler" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
+  </fragments>
+</fragment:ModelFragments>
