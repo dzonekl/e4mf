@@ -1,11 +1,13 @@
-Welcome to the E4MF Project! 
+# Welcome to the E4MF Project! 
 
 What is it? 
+-----------
 
 E4MF is an implementation of an EMF Editor on Eclipse e4 Platform. 
 
 
-Why is it? 
+Why is it?
+----------
 
 Someone at the recent Eclipse con forum asked, will an EMF Editor 
 work in e4? The answer is yes, using the 3.x compatibility layer. 
@@ -15,7 +17,8 @@ Perhaps cool if some of this works ends-up in the official releases of
 EMF. 
 
 
-How this work? 
+How this work?
+--------------
 
 Clone the repo, and imported into your Eclipse (4.3) IDE Workspace. 
 Open the file: 
@@ -32,6 +35,7 @@ This will open the E4mf editor.
 
 
 What's in the gitbox? 
+---------------------
 
 - An adaptation of the eclipse EMF plugins for e4.
 - The Extended library editor in it's 3.x and 4.x version. 
@@ -41,10 +45,11 @@ What's in the gitbox?
        
  
 What have you done????
+----------------------
 
 I have documented every single step taken to achieve this. 
 
-[Read about the conversion process][http://modelmoo.blogspot.com/]
+[Read about the conversion process](http://modelmoo.blogspot.com/)
 
 
 Gratitude! 
