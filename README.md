@@ -3,7 +3,11 @@
 What is it? 
 -----------
 
-E4MF is an implementation of an EMF Editor on Eclipse e4 Platform. 
+E4MF is an implementation of the Extended Library example EMF Editor on Eclipse e4 Platform. 
+
+The Extended library is a sample model, which demonstrates many different moddeling aspects. 
+EMF Tooling, supports the code generation of an RCP Editor for editing an Extended Library Model. 
+E4MF is a an Extended library RCP Editor using the Eclipse e4 Framework
 
 
 Why is it?
@@ -14,24 +18,26 @@ work in e4? The answer is yes, using the 3.x compatibility layer.
 I wanted to learn e4, and decided it would be fun to create e4mf 
 
 Perhaps cool if some of this works ends-up in the official releases of 
-EMF. 
+EMF. Including the generation of a working RCP editor based on e4 for any arbitrary 
+EMF model. 
 
 
 How this work?
 --------------
 
-Clone the repo, and imported into your Eclipse (4.3) IDE Workspace. 
-Open the file: 
+Clone the repo, and import the projects in the *bundles* folder into your Eclipse (4.3) IDE Workspace. 
 
+
+- Open the .product file
 
 /org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.library.e4editor.product
 
-
-- Check the product dependencies. 
+- Check the product dependencies
+. 
 - Launch the product
 
 
-This will open the E4mf editor. 
+This will open the E4mf editor for the Extended Library Model. . 
 
 
 What's in the gitbox? 
