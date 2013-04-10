@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: E4 Resources
+Bundle-SymbolicName: org.eclipse.e4.tools.resources
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: eclipse.org
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Service-Component: OSGI-INF/resourceprovider.xml
+Require-Bundle: org.eclipse.e4.tools.services;bundle-version="0.12.0";visibility:=reexport,
+ org.eclipse.swt;bundle-version="3.7.0"
+Export-Package: org.eclipse.e4.tools.resources
