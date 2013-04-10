@@ -1,0 +1,9 @@
+h1. Base instruction for migrating EMF generated RCP code to E4
+
+1. eclipse UI dependency. 
+
+To migrate,  break the dependency on Eclipse 3.x
+generated editor, however gets dependency from emf.edit.ui
+
+
+ 

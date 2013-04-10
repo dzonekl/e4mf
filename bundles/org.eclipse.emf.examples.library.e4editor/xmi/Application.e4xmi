@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_2qrMkJuiEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.application">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_7DEwMJuiEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.trimmedwindow.0">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_qniOAJumEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.perspectivestack.0">
+      <children xsi:type="advanced:Perspective" xmi:id="_r7ABAJumEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.perspective.0">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_ies-UJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partsashcontainer.main" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_S1SDMJ06EeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.partstack.editor.stack"/>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_6fF1MJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partsashcontainer.1">
+            <children xsi:type="basic:PartStack" xmi:id="_7KHvMJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partstack.outline"/>
+            <children xsi:type="basic:PartStack" xmi:id="_7nscAJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partstack.properties">
+              <children xsi:type="basic:Part" xmi:id="_8T8eAJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.part.properties" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.presentation.PropertiesPart" label="Properties" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/eview16/prop_ps.gif"/>
+            </children>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_F0VIsJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.mainMenu">
+      <children xsi:type="menu:Menu" xmi:id="_N02pkJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.file" label="%_UI_Menu_File_label">
+        <children xsi:type="menu:Menu" xmi:id="_ht1wwJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.newMenu" label="%_UI_Menu_New_label"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_5rvJwJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.file.additions"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_KJgM0JygEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.3"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_x1lQYJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.closeMenuItem" label="Close" command="_lN5hsJxoEeKqGYqEcfwjbA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2M4yYJxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.closeAllMenuItem" label="Close All" command="_nQFb4JxoEeKqGYqEcfwjbA"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_5aZssJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.2"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_7MU9UJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.saveMenuItem" label="Save" command="_fRcKUJxoEeKqGYqEcfwjbA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_OeQhAJxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.saveAsMenuItem" label="Save As" command="_iJ8BcJxoEeKqGYqEcfwjbA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_AGVZMJxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.saveAllMenutItem" label="Save All" command="_poI4YJxoEeKqGYqEcfwjbA"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_uBZNEJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_6IzgQJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.quitMenuItem" label="Quit" command="_1O384JxmEeKqGYqEcfwjbA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_O7wnQJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.edit" label="%_UI_Menu_Edit_label"/>
+      <children xsi:type="menu:Menu" xmi:id="_qaNHAKBkEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.menu.emf" label="%_UI_EXTLibraryEditor_menu">
+        <children xsi:type="menu:DynamicMenuContribution" xmi:id="_uTY2QKDsEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.dynamicmenucontribution.0" label="%_UI_CreateChild_menu_item" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.presentation.EditorContribution"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_bH4u4KDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.model.additions"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_T8GUoJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.window" label="%_UI_Menu_Window_label"/>
+      <children xsi:type="menu:Menu" xmi:id="_VwUrUJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.menu.help" label="%_UI_Menu_Help_label">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_b83tIJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.aboutMenuItem" label="%_UI_Menu_About_label" command="_e3hgYJxmEeKqGYqEcfwjbA"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_GjnbIJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handler.aboutHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.AboutHandler" command="_e3hgYJxmEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_WlrJgJxnEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handler.quitHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.QuitHandler" command="_1O384JxmEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_IJqrwJyPEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handler.closeHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.CloseHandler" command="_lN5hsJxoEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_td6TcJyREeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.handler.closeAllHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.CloseAllHandler" command="_nQFb4JxoEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_1jVCkKFLEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.handler.0" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.SaveHandler" command="_fRcKUJxoEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_39fX4KFLEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.handler.1" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.SaveAsHandler" command="_iJ8BcJxoEeKqGYqEcfwjbA"/>
+  <handlers xmi:id="_4ei2gKFLEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.handler.2" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.SaveAllHandler" command="_poI4YJxoEeKqGYqEcfwjbA"/>
+  <bindingTables xmi:id="_NKR64J3MEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.bindingtable.both" bindingContext="_Yn1t4J3NEeKoLt6wIuRNag">
+    <bindings xmi:id="_QdFgsJ3SEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.close" keySequence="M1+W" command="_lN5hsJxoEeKqGYqEcfwjbA"/>
+    <bindings xmi:id="_Q9L9EJ3SEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.closeAll" keySequence="M1+M2+W"/>
+    <bindings xmi:id="_EkgTsJ3TEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.save" keySequence="M1+S" command="_fRcKUJxoEeKqGYqEcfwjbA"/>
+    <bindings xmi:id="_MIXGsJ3TEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.saveAll" keySequence="M1+M2+S" command="_poI4YJxoEeKqGYqEcfwjbA"/>
+    <bindings xmi:id="_loqbsJ3UEeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.0" keySequence="M1+Q" command="_1O384JxmEeKqGYqEcfwjbA"/>
+  </bindingTables>
+  <rootContext xmi:id="_Yn1t4J3NEeKoLt6wIuRNag" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="Dialog And Window">
+    <children xmi:id="_c9x2kJ3REeKoLt6wIuRNag" elementId="org.eclipse.ui.contexts.dialog " name="Dialog"/>
+    <children xmi:id="_dTUowJ3REeKoLt6wIuRNag" elementId="org.eclipse.ui.contexts.window " name="Window"/>
+  </rootContext>
+  <commands xmi:id="_e3hgYJxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.command.about" commandName="aboutCommand"/>
+  <commands xmi:id="_1O384JxmEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.command.quitCommand" commandName="quitCommand"/>
+  <commands xmi:id="_fRcKUJxoEeKqGYqEcfwjbA" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_iJ8BcJxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.command.saveAsCommand" commandName="saveAsCommand"/>
+  <commands xmi:id="_lN5hsJxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.command.closeCommand" commandName="closeCommand"/>
+  <commands xmi:id="_nQFb4JxoEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.command.closeAllCommand" commandName="closeAllCommand"/>
+  <commands xmi:id="_poI4YJxoEeKqGYqEcfwjbA" elementId="org.eclipse.ui.file.saveAll" commandName="saveAllCommand"/>
+  <addons xmi:id="_2qrMkZuiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_2qrMkpuiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_2qrMk5uiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_2qrMlJuiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_2qrMlZuiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_2qrMlpuiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_2qrMl5uiEeKqGYqEcfwjbA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+</application:Application>

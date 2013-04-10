@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_mUC1oKAyEeK9y_k9g5Mqqg">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_qqGlAKA0EeK9y_k9g5Mqqg" featurename="commands" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:Command" xmi:id="_vdusEKA0EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.command.newModel" commandName="newModelCommand"/>
+    <elements xsi:type="commands:Command" xmi:id="_z3jH0KA7EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.command.open" commandName="openCommand"/>
+    <elements xsi:type="commands:Command" xmi:id="_BuozcKA8EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.command.openURI" commandName="openURICommand"/>
+    <elements xsi:type="commands:Command" xmi:id="_3cg3kKDkEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.command.refresh" commandName="refreshCommand"/>
+    <elements xsi:type="commands:Command" xmi:id="_30c2cKDkEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.command.showProperties" commandName="showPropertiesCommand"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_450MAKA0EeK9y_k9g5Mqqg" featurename="handlers" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:Handler" xmi:id="_MQa0UKA1EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handler.newModelHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.NewHandler" command="_vdusEKA0EeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_8uf6YKA7EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handler.openHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.OpenHandler" command="_z3jH0KA7EeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_F17Y8KA8EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handler.openURIHandler" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.handlers.OpenURIHandler" command="_BuozcKA8EeK9y_k9g5Mqqg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_VMxrUKA1EeK9y_k9g5Mqqg" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.newMenu" positionInList="">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_YKZ6EKA1EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.newModel" label="%_UI_EXTLibraryModelWizard_label" command="_vdusEKA0EeK9y_k9g5Mqqg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_lgXxcKA8EeK9y_k9g5Mqqg" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.file" positionInList="after:org.eclipse.emf.examples.library.e4editor.menuseparator.file.additions">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_exnacKA8EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.openURIMenuItem" label="%_UI_Menu_OpenURI_label" tooltip="%_UI_Menu_OpenURI_description" command="_BuozcKA8EeK9y_k9g5Mqqg"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_eY8bwKA8EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.openMenuItem" label="%_UI_Menu_Open_label" tooltip="%_UI_Menu_Open_description" command="_z3jH0KA7EeK9y_k9g5Mqqg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_v3C04KA9EeK9y_k9g5Mqqg" featurename="bindingTables" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:BindingTable" xmi:id="_Am9u0KA-EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.bindingtable.both.contrib" bindingContext="_f4ZxcKA-EeK9y_k9g5Mqqg">
+      <bindings xmi:id="_MbXJ8KA-EeK9y_k9g5Mqqg" elementId="org.eclipse.emf.examples.library.e4editor.keybinding.0" keySequence="M1+O" command="_z3jH0KA7EeK9y_k9g5Mqqg"/>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_TZRXQKA-EeK9y_k9g5Mqqg" featurename="bindingContexts" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
+    <elements xsi:type="commands:BindingContext" xmi:id="_f4ZxcKA-EeK9y_k9g5Mqqg" elementId="org.eclipse.ui.contexts.window" name="Window"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ufKiEKDkEeKWE8rOHgFS-g" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.emf" positionInList="after:org.eclipse.emf.examples.library.e4editor.menuseparator.model.additions">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_EjDQAKDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.0" label="%_UI_RefreshViewer_menu_item" command="_3cg3kKDkEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_E3o_8KDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.1" label="%_UI_ShowPropertiesView_menu_item" command="_30c2cKDkEeKWE8rOHgFS-g"/>
+  </fragments>
+</fragment:ModelFragments>

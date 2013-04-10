@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+ <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="EXTLibrary Editor"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+<!-- Enable when debugging.             
+         <property
+               name="clearPersistedState"
+               value="true">
+         </property>
+-->         
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/org.eclipse.emf.examples.library.e4editor/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="EXTLibrary Editor">
+         </property>
+         <property
+               name="applicationXMI"
+               value="org.eclipse.emf.examples.library.e4editor/xmi/Application.e4xmi">
+         </property>
+      </product>
+   </extension>
+ <extension
+       id="id2"
+       point="org.eclipse.e4.workbench.model">
+    <fragment
+          uri="xmi/ide_fragment.e4xmi">
+    </fragment>
+ </extension>
+ <extension
+       point="org.eclipse.core.expressions.definitions">
+    <definition
+          id="org.eclipse.emf.examples.library.e4editor.emfEditorActive">
+       <with
+             variable="EMF_Editor_Active">
+          <equals
+                value="org.eclipse.emf.examples.library.e4editor.partstack.editor">
+          </equals>
+       </with>
+    </definition>
+ </extension>
+</plugin>

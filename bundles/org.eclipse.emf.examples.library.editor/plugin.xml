@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="EXTLibraryEditorAdvisorApplication">
+      <!-- @generated extlibrary -->
+      <application>
+         <run class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated extlibrary -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisor$Perspective"
+            id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated extlibrary -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- @generated extlibrary -->
+      <key
+            commandId="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated extlibrary -->
+      <actionSet
+            label="%_UI_EXTLibraryEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="EXTLibraryEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenURICommand"
+               class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenCommand"
+               class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated extlibrary -->
+      <actionSet
+            label="%_UI_EXTLibraryModelWizard_ActionSet_label"
+            visible="true"
+            id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryActionBarContributorActionSet">
+         <action
+               label="%_UI_EXTLibraryModelWizard_label"
+               class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated extlibrary -->
+      <editor
+            id="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorID"
+            name="%_UI_EXTLibraryEditor_label"
+            icon="icons/full/obj16/EXTLibraryModelFile.gif"
+            class="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditor"
+            contributorClass="org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryActionBarContributor">
+         <contentTypeBinding contentTypeId="org.eclipse.emf.examples.library.extendedLibrary"/>
+      </editor>
+   </extension>
+
+</plugin>
