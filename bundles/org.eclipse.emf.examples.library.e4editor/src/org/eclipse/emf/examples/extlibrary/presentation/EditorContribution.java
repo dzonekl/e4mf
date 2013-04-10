@@ -21,6 +21,8 @@ import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.e4.ui.workbench.modeling.ISelectionListener;
+import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
+import org.eclipse.e4mf.common.ui.viewer.IViewerProvider;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateChildAction;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateSiblingAction;
 import org.eclipse.e4mf.edit.ui.e4.action.EditingDomainContribution;
@@ -44,6 +46,9 @@ public class EditorContribution extends EditingDomainContribution implements ISe
 	@Inject
 	private ESelectionService selectionService;
 
+	@Inject
+	private EMenuService menuService;
+	
 	private EXTLibraryEditor contributionPart;
 
 	@SuppressWarnings("unused")
@@ -69,6 +74,7 @@ public class EditorContribution extends EditingDomainContribution implements ISe
 			MApplication application) {
 		MPart part = (MPart) event.getProperty(UIEvents.EventTags.ELEMENT);
 		this.part = part;
+		
 		if (part.getElementId().equals(HandlerSupport.EDITOR_ID)) {
 			Object contribution = part.getObject();
 			if (contribution instanceof EXTLibraryEditor) {
@@ -76,6 +82,11 @@ public class EditorContribution extends EditingDomainContribution implements ISe
 				super.setActiveContribution(contributionPart);
 			}
 			selectionService.addSelectionListener(this);
+			if(contribution instanceof IViewerProvider){
+				menuService.registerContextMenu(parent, menuId)
+			}
+			
+			// Force a selection update so the actions are created. 
 			Object selectionObject = selectionService.getSelection();
 			selectionChanged(part, selectionObject);
 		} else {
@@ -122,20 +133,15 @@ public class EditorContribution extends EditingDomainContribution implements ISe
 				.getString("_UI_CreateChild_menu_item"));//$NON-NLS-1$
 		createChildMenuManager.setElementId(CHILD_CREATE_ID);
 
-		//		submenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		populateManager(createChildMenuManager, createChildActionsMap, null);
 		items.add(createChildMenuManager);
-
-		//		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 
 		createSiblingMenuManager = MMenuFactory.INSTANCE.createMenu();
 		createSiblingMenuManager.setLabel(EXTLibraryEditorPlugin.INSTANCE
 				.getString("_UI_CreateSibling_menu_item"));//$NON-NLS-1$
 		createSiblingMenuManager.setElementId(SIBLING_CREATE_ID);
 
-		//		submenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		populateManager(createSiblingMenuManager, createSiblingActionsMap, null);
-		//		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 		items.add(createSiblingMenuManager);
 	}
 

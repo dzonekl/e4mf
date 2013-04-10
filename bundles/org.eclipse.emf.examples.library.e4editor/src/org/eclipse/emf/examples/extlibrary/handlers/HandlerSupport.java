@@ -92,13 +92,17 @@ public class HandlerSupport extends ContextFunction {
 
 		// As file String.
 		part.setInputURI(URI.createFileURI(filePath).toFileString());
-
+		
+		// The icon. 
 		part.setIconURI("platform:/plugin/org.eclipse.emf.examples.library.e4editor/icons/full/obj16/EXTLibraryModelFile.gif");
 
 		part.setLabel(filePath);
+		
 		// part.setTooltip(input.getTooltip());
 		part.setCloseable(true);
-
+		
+		// Add a menu programmatically, to which we contribute??
+		
 		stack.getChildren().add(part);
 		MPart showPart = partService.showPart(part,
 				EPartService.PartState.ACTIVATE);

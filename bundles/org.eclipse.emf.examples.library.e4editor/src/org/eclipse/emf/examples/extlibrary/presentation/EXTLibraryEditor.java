@@ -1718,7 +1718,20 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 	public ISelection getSelection() {
 		return editorSelection;
 	}
-
+	
+	@Inject
+	public void injectSelection(
+			@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection) {
+		
+		//Check if it's not use. 
+		System.out.println("Editor selection received: " + selection);
+		if (selection != null && this.getViewer() != null) {
+			StructuredSelection structuredSelection = new StructuredSelection(
+					selection);
+			this.getViewer().setSelection(structuredSelection, true);
+		}
+	}
+	
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to
 	 * set this editor's overall selection. Calling this result will notify the

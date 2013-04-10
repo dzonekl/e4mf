@@ -53,7 +53,7 @@ public class SWTOutlinePart implements ISelectionChangedListener {
 	protected int getTreeStyle() {
 		return SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL;
 	}
-	
+
 	@Focus
 	public void onFocus() {
 		treeViewer.getTree().setFocus();
@@ -74,8 +74,10 @@ public class SWTOutlinePart implements ISelectionChangedListener {
 		if (selection instanceof IStructuredSelection) {
 			// We could check, if the tree is multi, and set the selection
 			// accordingly.
-			selectionService.setSelection(((IStructuredSelection) selection)
-					.toList());
+			Object object = ((IStructuredSelection) selection)
+					.getFirstElement();
+			System.out.println("Outline, setting selection: " + object);
+			selectionService.setSelection(object);
 		}
 	}
 

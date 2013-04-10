@@ -89,19 +89,19 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IAction showPropertiesViewAction =
-		new Action(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
-		{
-			@Override
-			public void run() {
-				try {
-					getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
-				}
-				catch (PartInitException exception) {
-					EXTLibraryEditorPlugin.INSTANCE.log(exception);
-				}
-			}
-		};
+//	protected IAction showPropertiesViewAction =
+//		new Action(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
+//		{
+//			@Override
+//			public void run() {
+//				try {
+//					getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
+//				}
+//				catch (PartInitException exception) {
+//					EXTLibraryEditorPlugin.INSTANCE.log(exception);
+//				}
+//			}
+//		};
 
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
@@ -110,24 +110,24 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IAction refreshViewerAction =
-		new Action(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
-		{
-			@Override
-			public boolean isEnabled() {
-				return activeEditorPart instanceof IViewerProvider;
-			}
-
-			@Override
-			public void run() {
-				if (activeEditorPart instanceof IViewerProvider) {
-					Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
-					if (viewer != null) {
-						viewer.refresh();
-					}
-				}
-			}
-		};
+//	protected IAction refreshViewerAction =
+//		new Action(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
+//		{
+//			@Override
+//			public boolean isEnabled() {
+//				return activeEditorPart instanceof IViewerProvider;
+//			}
+//
+//			@Override
+//			public void run() {
+//				if (activeEditorPart instanceof IViewerProvider) {
+//					Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
+//					if (viewer != null) {
+//						viewer.refresh();
+//					}
+//				}
+//			}
+//		};
 
 	/**
 	 * This will contain one {@link org.eclipse.e4mf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -136,7 +136,7 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> createChildActions;
+//	protected Collection<IAction> createChildActions;
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
@@ -144,7 +144,7 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IMenuManager createChildMenuManager;
+//	protected IMenuManager createChildMenuManager;
 
 	/**
 	 * This will contain one {@link org.eclipse.e4mf.edit.ui.action.CreateSiblingAction} corresponding to each descriptor
@@ -153,7 +153,7 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> createSiblingActions;
+//	protected Collection<IAction> createSiblingActions;
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
@@ -161,7 +161,7 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IMenuManager createSiblingMenuManager;
+//	protected IMenuManager createSiblingMenuManager;
 
 	/**
 	 * This creates an instance of the contributor.
@@ -198,34 +198,34 @@ public class EXTLibraryActionBarContributor
 	@Override
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
-
-		IMenuManager submenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_EXTLibraryEditor_menu"), "org.eclipse.emf.examples.extlibraryMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
-		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
-		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
-		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
-		submenuManager.add(new Separator("additions")); //$NON-NLS-1$
-		submenuManager.add(new Separator("additions-end")); //$NON-NLS-1$
-
-		// Prepare for CreateChild item addition or removal.
-		//
-		createChildMenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
-		submenuManager.insertBefore("additions", createChildMenuManager); //$NON-NLS-1$
-
-		// Prepare for CreateSibling item addition or removal.
-		//
-		createSiblingMenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
-		submenuManager.insertBefore("additions", createSiblingMenuManager); //$NON-NLS-1$
-
-		// Force an update because Eclipse hides empty menus now.
-		//
-		submenuManager.addMenuListener
-			(new IMenuListener() {
-				 public void menuAboutToShow(IMenuManager menuManager) {
-					 menuManager.updateAll(true);
-				 }
-			 });
-
-		addGlobalActions(submenuManager);
+//
+//		IMenuManager submenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_EXTLibraryEditor_menu"), "org.eclipse.emf.examples.extlibraryMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
+//		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
+//		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
+//		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
+//		submenuManager.add(new Separator("additions")); //$NON-NLS-1$
+//		submenuManager.add(new Separator("additions-end")); //$NON-NLS-1$
+//
+//		// Prepare for CreateChild item addition or removal.
+//		//
+//		createChildMenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+//		submenuManager.insertBefore("additions", createChildMenuManager); //$NON-NLS-1$
+//
+//		// Prepare for CreateSibling item addition or removal.
+//		//
+//		createSiblingMenuManager = new MenuManager(EXTLibraryEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+//		submenuManager.insertBefore("additions", createSiblingMenuManager); //$NON-NLS-1$
+//
+//		// Force an update because Eclipse hides empty menus now.
+//		//
+//		submenuManager.addMenuListener
+//			(new IMenuListener() {
+//				 public void menuAboutToShow(IMenuManager menuManager) {
+//					 menuManager.updateAll(true);
+//				 }
+//			 });
+//
+//		addGlobalActions(submenuManager);
 	}
 
 	/**
@@ -235,29 +235,29 @@ public class EXTLibraryActionBarContributor
 	 * @generated
 	 */
 	@Override
-	public void setActiveEditor(IEditorPart part) {
-		super.setActiveEditor(part);
-		activeEditorPart = part;
-
-		// Switch to the new selection provider.
-		//
-		if (selectionProvider != null) {
-			selectionProvider.removeSelectionChangedListener(this);
-		}
-		if (part == null) {
-			selectionProvider = null;
-		}
-		else {
-			selectionProvider = part.getSite().getSelectionProvider();
-			selectionProvider.addSelectionChangedListener(this);
-
-			// Fake a selection changed event to update the menus.
-			//
-			if (selectionProvider.getSelection() != null) {
-				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
-			}
-		}
-	}
+//	public void setActiveEditor(IEditorPart part) {
+//		super.setActiveEditor(part);
+//		activeEditorPart = part;
+//
+//		// Switch to the new selection provider.
+//		//
+//		if (selectionProvider != null) {
+//			selectionProvider.removeSelectionChangedListener(this);
+//		}
+//		if (part == null) {
+//			selectionProvider = null;
+//		}
+//		else {
+//			selectionProvider = part.getSite().getSelectionProvider();
+//			selectionProvider.addSelectionChangedListener(this);
+//
+//			// Fake a selection changed event to update the menus.
+//			//
+//			if (selectionProvider.getSelection() != null) {
+//				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
+//			}
+//		}
+//	}
 
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionChangedListener},
@@ -267,45 +267,45 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void selectionChanged(SelectionChangedEvent event) {
-		// Remove any menu items for old selection.
-		//
-		if (createChildMenuManager != null) {
-			depopulateManager(createChildMenuManager, createChildActions);
-		}
-		if (createSiblingMenuManager != null) {
-			depopulateManager(createSiblingMenuManager, createSiblingActions);
-		}
-
-		// Query the new selection for appropriate new child/sibling descriptors
-		//
-		Collection<?> newChildDescriptors = null;
-		Collection<?> newSiblingDescriptors = null;
-
-		ISelection selection = event.getSelection();
-		if (selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
-			Object object = ((IStructuredSelection)selection).getFirstElement();
-
-			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
-
-			newChildDescriptors = domain.getNewChildDescriptors(object, null);
-			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
-		}
-
-		// Generate actions for selection; populate and redraw the menus.
-		//
-		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
-		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
-
-		if (createChildMenuManager != null) {
-			populateManager(createChildMenuManager, createChildActions, null);
-			createChildMenuManager.update(true);
-		}
-		if (createSiblingMenuManager != null) {
-			populateManager(createSiblingMenuManager, createSiblingActions, null);
-			createSiblingMenuManager.update(true);
-		}
-	}
+//	public void selectionChanged(SelectionChangedEvent event) {
+//		// Remove any menu items for old selection.
+//		//
+//		if (createChildMenuManager != null) {
+//			depopulateManager(createChildMenuManager, createChildActions);
+//		}
+//		if (createSiblingMenuManager != null) {
+//			depopulateManager(createSiblingMenuManager, createSiblingActions);
+//		}
+//
+//		// Query the new selection for appropriate new child/sibling descriptors
+//		//
+//		Collection<?> newChildDescriptors = null;
+//		Collection<?> newSiblingDescriptors = null;
+//
+//		ISelection selection = event.getSelection();
+//		if (selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
+//			Object object = ((IStructuredSelection)selection).getFirstElement();
+//
+//			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
+//
+//			newChildDescriptors = domain.getNewChildDescriptors(object, null);
+//			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
+//		}
+//
+//		// Generate actions for selection; populate and redraw the menus.
+//		//
+//		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
+//		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
+//
+//		if (createChildMenuManager != null) {
+//			populateManager(createChildMenuManager, createChildActions, null);
+//			createChildMenuManager.update(true);
+//		}
+//		if (createSiblingMenuManager != null) {
+//			populateManager(createSiblingMenuManager, createSiblingActions, null);
+//			createSiblingMenuManager.update(true);
+//		}
+//	}
 
 	/**
 	 * This generates a {@link org.eclipse.e4mf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>,
@@ -314,15 +314,15 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
-		Collection<IAction> actions = new ArrayList<IAction>();
-		if (descriptors != null) {
-			for (Object descriptor : descriptors) {
-				actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
-			}
-		}
-		return actions;
-	}
+//	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
+//		Collection<IAction> actions = new ArrayList<IAction>();
+//		if (descriptors != null) {
+//			for (Object descriptor : descriptors) {
+//				actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
+//			}
+//		}
+//		return actions;
+//	}
 
 	/**
 	 * This generates a {@link org.eclipse.e4mf.edit.ui.action.CreateSiblingAction} for each object in <code>descriptors</code>,
@@ -331,15 +331,15 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
-		Collection<IAction> actions = new ArrayList<IAction>();
-		if (descriptors != null) {
-			for (Object descriptor : descriptors) {
-				actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
-			}
-		}
-		return actions;
-	}
+//	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
+//		Collection<IAction> actions = new ArrayList<IAction>();
+//		if (descriptors != null) {
+//			for (Object descriptor : descriptors) {
+//				actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
+//			}
+//		}
+//		return actions;
+//	}
 
 	/**
 	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.ActionContributionItem}s
@@ -350,19 +350,19 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
-		if (actions != null) {
-			for (IAction action : actions) {
-				if (contributionID != null) {
-					manager.insertBefore(contributionID, action);
-				}
-				else {
-					manager.add(action);
-				}
-			}
-		}
-	}
-		
+//	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
+//		if (actions != null) {
+//			for (IAction action : actions) {
+//				if (contributionID != null) {
+//					manager.insertBefore(contributionID, action);
+//				}
+//				else {
+//					manager.add(action);
+//				}
+//			}
+//		}
+//	}
+//		
 	/**
 	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.ActionContributionItem}s
 	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
@@ -370,28 +370,28 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
-		if (actions != null) {
-			IContributionItem[] items = manager.getItems();
-			for (int i = 0; i < items.length; i++) {
-				// Look into SubContributionItems
-				//
-				IContributionItem contributionItem = items[i];
-				while (contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
-				}
-
-				// Delete the ActionContributionItems with matching action.
-				//
-				if (contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem)contributionItem).getAction();
-					if (actions.contains(action)) {
-						manager.remove(contributionItem);
-					}
-				}
-			}
-		}
-	}
+//	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
+//		if (actions != null) {
+//			IContributionItem[] items = manager.getItems();
+//			for (int i = 0; i < items.length; i++) {
+//				// Look into SubContributionItems
+//				//
+//				IContributionItem contributionItem = items[i];
+//				while (contributionItem instanceof SubContributionItem) {
+//					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
+//				}
+//
+//				// Delete the ActionContributionItems with matching action.
+//				//
+//				if (contributionItem instanceof ActionContributionItem) {
+//					IAction action = ((ActionContributionItem)contributionItem).getAction();
+//					if (actions.contains(action)) {
+//						manager.remove(contributionItem);
+//					}
+//				}
+//			}
+//		}
+//	}
 
 	/**
 	 * This populates the pop-up menu before it appears.
@@ -399,7 +399,6 @@ public class EXTLibraryActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;

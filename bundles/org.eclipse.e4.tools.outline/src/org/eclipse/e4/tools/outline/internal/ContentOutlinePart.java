@@ -46,9 +46,11 @@ public class ContentOutlinePart {
 	@Inject
 	public void setActivePart(
 			@Optional @Named(IServiceConstants.ACTIVE_PART) MPart activePart) {
+		
 		if (parent.isDisposed()) {
 			return;
 		}
+		
 		IEclipseContext oldPartContext = partContext;
 		Control oldPartControl = partControl;
 
@@ -78,9 +80,12 @@ public class ContentOutlinePart {
 				// partContext.set(Composite.class, comp);
 				// ContextInjectionFactory.make(outlineClass, partContext);
 			} else {
-				Label label = new Label(parent, SWT.NONE);
-				label.setText("Dude implement outline: " + activePart.getElementId());
-				partControl = label;
+				// We could actually the part...
+				// if so do not thing. 
+				if(activePart.getElementId().equals("org.eclipse.e4.tools.part.outline") ){
+					return;
+				}
+				
 			}
 		} else {
 			Label label = new Label(parent, SWT.NONE);
