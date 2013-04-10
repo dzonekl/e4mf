@@ -13,7 +13,7 @@ E4MF is a an Extended library RCP Editor using the Eclipse e4 Framework
 Why is it?
 ----------
 
-Someone at the recent Eclipse con forum asked, will an EMF Editor 
+Someone at the recent Eclipse Conference asked, will an EMF Editor 
 work in e4? The answer is yes, using the 3.x compatibility layer. 
 I wanted to learn e4, and decided it would be fun to create e4mf 
 
@@ -22,7 +22,7 @@ EMF. Including the generation of a working RCP editor based on e4 for any arbitr
 EMF model. 
 
 
-How this work?
+How does it work?
 --------------
 
 Clone the repo, and import the projects in the *bundles* folder into your Eclipse (4.3) IDE Workspace. 
