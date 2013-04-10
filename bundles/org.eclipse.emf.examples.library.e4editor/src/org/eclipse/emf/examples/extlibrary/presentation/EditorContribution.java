@@ -46,6 +46,7 @@ public class EditorContribution extends EditingDomainContribution implements ISe
 
 	private EXTLibraryEditor contributionPart;
 
+	@SuppressWarnings("unused")
 	private MPart part;
 
 	@PostConstruct
