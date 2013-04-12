@@ -15,6 +15,7 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.emf.examples.extlibrary.presentation.EditorSupport;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 
@@ -22,7 +23,7 @@ import org.eclipse.swt.widgets.Shell;
 public class OpenHandler {
 
 	@Inject
-	private HandlerSupport support;
+	private EditorSupport support;
 
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {

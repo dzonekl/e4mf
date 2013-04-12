@@ -11,7 +11,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 
-@SuppressWarnings("restriction")
 public class EXTLibraryContentOutline extends SWTOutlinePart {
 
 	@Inject
@@ -24,7 +23,7 @@ public class EXTLibraryContentOutline extends SWTOutlinePart {
 
 	@Override
 	protected void createControl(Composite parent) {
-		
+
 		super.createControl(parent);
 		contentOutlineViewer = getTreeViewer();
 		contentOutlineViewer.addSelectionChangedListener(this);

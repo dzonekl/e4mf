@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_2qrMkJuiEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.application">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_7DEwMJuiEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.trimmedwindow.0">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_7DEwMJuiEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.trimmedwindow.main">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_qniOAJumEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.perspectivestack.0">
       <children xsi:type="advanced:Perspective" xmi:id="_r7ABAJumEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.perspective.0">
         <children xsi:type="basic:PartSashContainer" xmi:id="_ies-UJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partsashcontainer.main" horizontal="true">

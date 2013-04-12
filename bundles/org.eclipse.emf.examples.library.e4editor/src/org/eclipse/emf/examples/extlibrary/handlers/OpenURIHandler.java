@@ -7,6 +7,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4mf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.examples.extlibrary.presentation.EditorSupport;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 
@@ -14,7 +15,7 @@ import org.eclipse.swt.widgets.Shell;
 public class OpenURIHandler {
 
 	@Inject
-	private HandlerSupport support;
+	private EditorSupport support;
 
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {

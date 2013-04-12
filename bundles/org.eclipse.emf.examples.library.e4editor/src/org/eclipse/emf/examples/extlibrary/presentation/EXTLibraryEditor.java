@@ -32,6 +32,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.e4mf.common.ui.ViewerPane;
 import org.eclipse.e4mf.common.ui.viewer.IViewerProvider;
 import org.eclipse.e4mf.edit.ui.celleditor.AdapterFactoryTreeEditor;
@@ -58,7 +59,6 @@ import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-import org.eclipse.emf.examples.extlibrary.handlers.HandlerSupport;
 import org.eclipse.emf.examples.extlibrary.provider.EXTLibraryItemProviderAdapterFactory;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -133,10 +133,13 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 	private Shell activeShell;
 
 	@Inject
-	private HandlerSupport support;
+	private EditorSupport support;
 
 	@Inject
 	private ESelectionService selectionService;
+
+	@Inject
+	private EMenuService menuService;
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes
@@ -820,6 +823,9 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 			//
 			currentViewer = viewer;
 
+			menuService.registerContextMenu(viewer.getControl(),
+					EditorIdentities.EDITOR_POPUP_ID);
+
 			// Set the editors selection based on the current viewer's
 			// selection.
 			//
@@ -974,7 +980,7 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 				new AdapterFactoryTreeEditor(selectionViewer.getTree(),
 						adapterFactory);
 
-				createContextMenuFor(selectionViewer);
+				// createContextMenuFor(selectionViewer);
 
 				setCurrentViewer(selectionViewer);
 
@@ -1663,8 +1669,8 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 
 		MPart part = (MPart) event.getProperty(UIEvents.EventTags.ELEMENT);
 		IEclipseContext appContext = application.getContext();
-		if (part.getElementId().equals(HandlerSupport.EDITOR_ID)) {
-			appContext.set("EMF_Editor_Active", HandlerSupport.EDITOR_ID);
+		if (part.getElementId().equals(EditorIdentities.EDITOR_ID)) {
+			appContext.set("EMF_Editor_Active", EditorIdentities.EDITOR_ID);
 		}
 	}
 
@@ -1718,12 +1724,12 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 	public ISelection getSelection() {
 		return editorSelection;
 	}
-	
+
 	@Inject
 	public void injectSelection(
 			@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selection) {
-		
-		//Check if it's not use. 
+
+		// Check if it's not use.
 		System.out.println("Editor selection received: " + selection);
 		if (selection != null && this.getViewer() != null) {
 			StructuredSelection structuredSelection = new StructuredSelection(
@@ -1731,7 +1737,7 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 			this.getViewer().setSelection(structuredSelection, true);
 		}
 	}
-	
+
 	/**
 	 * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to
 	 * set this editor's overall selection. Calling this result will notify the
@@ -1747,8 +1753,11 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 		}
 
 		if (selection instanceof IStructuredSelection) {
-			selectionService.setSelection(((IStructuredSelection) selection)
-					.getFirstElement());
+			Object firstElement = ((IStructuredSelection) selection)
+					.getFirstElement();
+			System.out
+					.println("EMF Editor, setting selection: " + firstElement);
+			selectionService.setSelection(firstElement);
 		}
 
 		// CB Fix See: https://bugs.eclipse.org/bugs/show_bug.cgi?id=332499
@@ -1892,5 +1901,12 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 	 */
 	protected boolean showOutlineView() {
 		return true;
+	}
+
+	public void updateContextMenuRegistration() {
+		if (currentViewer != null)
+			menuService.registerContextMenu(currentViewer.getControl(),
+					EditorIdentities.EDITOR_POPUP_ID);
+
 	}
 }

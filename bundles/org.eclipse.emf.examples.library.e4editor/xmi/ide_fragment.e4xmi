@@ -32,11 +32,9 @@
     <elements xsi:type="commands:BindingContext" xmi:id="_f4ZxcKA-EeK9y_k9g5Mqqg" elementId="org.eclipse.ui.contexts.window" name="Window"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ufKiEKDkEeKWE8rOHgFS-g" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.emf" positionInList="after:org.eclipse.emf.examples.library.e4editor.menuseparator.model.additions">
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_EjDQAKDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.0" label="%_UI_RefreshViewer_menu_item" command="_3cg3kKDkEeKWE8rOHgFS-g"/>
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_E3o_8KDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.1" label="%_UI_ShowPropertiesView_menu_item" command="_30c2cKDkEeKWE8rOHgFS-g"/>
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_6zANMKHfEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.2" label="Show Outline" command="_2C2Q4KHfEeKWZrq3lrURUg"/>
-  </fragments>
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_fj5ssKHhEeKWZrq3lrURUg" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
-    <elements xsi:type="menu:PopupMenu" xmi:id="_iBZp4KHhEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.popupmenu.inputPartMenu" label="Editor"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_EjDQAKDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.refresh" label="%_UI_RefreshViewer_menu_item" command="_3cg3kKDkEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_E3o_8KDlEeKWE8rOHgFS-g" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.showProperties" label="%_UI_ShowPropertiesView_menu_item" command="_30c2cKDkEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_6zANMKHfEeKWZrq3lrURUg" elementId="org.eclipse.emf.examples.library.e4editor.handledmenuitem.showOutline" label="Show Outline" command="_2C2Q4KHfEeKWZrq3lrURUg"/>
+    <elements xsi:type="menu:MenuSeparator" xmi:id="_jezsEKLeEeK-uPNW2-x-Kw" elementId="org.eclipse.emf.examples.library.e4editor.menuseparator.edit"/>
   </fragments>
 </fragment:ModelFragments>

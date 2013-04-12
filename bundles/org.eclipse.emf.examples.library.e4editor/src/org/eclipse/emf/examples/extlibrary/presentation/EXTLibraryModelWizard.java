@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.examples.extlibrary.EXTLibraryFactory;
 import org.eclipse.emf.examples.extlibrary.EXTLibraryPackage;
-import org.eclipse.emf.examples.extlibrary.handlers.HandlerSupport;
 import org.eclipse.emf.examples.extlibrary.provider.EXTLibraryEditPlugin;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -118,7 +117,7 @@ public class EXTLibraryModelWizard extends Wizard {
 	protected List<String> initialObjectNames;
 
 	@Inject
-	private HandlerSupport support;
+	private EditorSupport support;
 
 	/**
 	 * This just records the information. <!-- begin-user-doc --> <!--

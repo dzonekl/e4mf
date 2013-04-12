@@ -13,7 +13,6 @@ package org.eclipse.e4mf.edit.ui.e4.action;
 
 import java.util.Collection;
 
-import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.edit.command.CreateChildCommand;
