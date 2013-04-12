@@ -13,7 +13,6 @@
 
    <windowImages/>
 
-
    <launcher>
       <solaris/>
       <win useIco="false">
@@ -188,7 +187,8 @@
 
    <configurations>
       <plugin id="org.eclipse.e4.tools.emf.liveeditor" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.e4.tools.resources" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.tools.resources" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.e4mf.edit.ui" autoStart="true" startLevel="1" />
    </configurations>
 
 </product>

@@ -1,52 +1,51 @@
 package org.eclipse.e4mf.edit.ui.e4.action;
 
-import org.eclipse.e4.ui.model.application.ui.basic.MPart;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.jface.viewers.StructuredSelection;
+import javax.inject.Inject;
+
+import org.eclipse.e4.core.contexts.ContextFunction;
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.tools.helpers.E4ToolsHelper;
+import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
 
 @SuppressWarnings("restriction")
-public class EditingDomainContribution {
+public class EditingDomainContribution extends ContextFunction {
 
-	private Object activeContribution;
+	// Either lookup the entries one by one or locate the edit menu and clone it
+	// entirely to inject it in the popup.
 
-	/**
-	 * This is the action used to implement copy.
-	 */
-	protected CopyAction copyAction;
+	/** The ID of the Undo menu */
+	public static final String UNDO_MENU_ID = "org.eclipse.e4mf.edit.ui.handledmenuitem.undo";
 
-	public void init() {
-		copyAction = createCopyAction();
+	/** A collection of Global Handler ID's **/
+	public static final String[] GLOBAL_HANDLERS = new String[] { UNDO_MENU_ID, };
+
+	public static final String EDIT_MENU_ID = "org.eclipse.emf.examples.library.e4editor.menu.edit";
+
+	@Inject
+	private E4ToolsHelper helpMeWith;
+
+	@Override
+	public Object compute(IEclipseContext context) {
+		return ContextInjectionFactory.make(EditingDomainContribution.class,
+				context);
 	}
 
-	public void setActiveContribution(Object contribution) {
-		if (contribution instanceof IEditingDomainProvider) {
-			activeContribution = contribution;
-			activate();
+	public void addGlobalHandlers(MTrimmedWindow trimmedWindow, MMenu menu) {
+		System.out.println("Adding Editing Domain global handlers");
+//		menu.getChildren()
+//				.addAll(helpMeWith.locateGlobalHandlers(GLOBAL_HANDLERS,
+//						trimmedWindow));
+
+		// Clone the edit menu and add tot popup. 
+		MMenuElement editMenu = helpMeWith
+				.findMenu(trimmedWindow, EDIT_MENU_ID);
+		if (editMenu != null) {
+			MMenuElement cloneEditMenu = helpMeWith.cloneMenu(editMenu);
+			menu.getChildren().add(cloneEditMenu);
 		}
-	}
 
-	private void activate() {
-//		selectionService.addSelectionListener(this);
-		copyAction.setActiveContribution(activeContribution);
-	}
-
-	public void deactivate() {
-//		selectionService.removeSelectionListener(this);
-	}
-
-	public void selectionChanged(MPart part, Object selection) {
-		if (selection != null) {
-			copyAction.updateSelection(new StructuredSelection(selection));
-		}
-	}
-
-	/**
-	 * Returns the action used to implement copy.
-	 * 
-	 * @see #copyAction
-	 * @since 2.6
-	 */
-	protected CopyAction createCopyAction() {
-		return new CopyAction();
 	}
 }

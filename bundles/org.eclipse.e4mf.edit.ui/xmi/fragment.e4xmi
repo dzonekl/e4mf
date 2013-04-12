@@ -24,10 +24,10 @@
     <elements xsi:type="menu:HandledMenuItem" xmi:id="_xvwPsKBNEeK9y_k9g5Mqqg" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.selectAll" iconURI="" command="_kSvYUKBKEeK9y_k9g5Mqqg"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DebLsKBgEeKWE8rOHgFS-g" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.menu.emf" positionInList="before:org.eclipse.emf.examples.library.e4editor.menuseparator.model.additions">
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_J6pBMKBgEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.validate" command="_SA1DAKBREeK9y_k9g5Mqqg"/>
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_jGvaQKCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.control" label="%_UI_Control_menu_item" command="_lZ3v8KCAEeKWE8rOHgFS-g"/>
-    <elements xsi:type="menu:MenuSeparator" xmi:id="_7SEV0KCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.menuseparator.loadResource"/>
     <elements xsi:type="menu:HandledMenuItem" xmi:id="_PzUzYKCCEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.loadResource" command="_BYPp4KCCEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:MenuSeparator" xmi:id="_7SEV0KCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.menuseparator.loadResource"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_jGvaQKCBEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.control" label="%_UI_Control_menu_item" command="_lZ3v8KCAEeKWE8rOHgFS-g"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_J6pBMKBgEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.handledmenuitem.validate" command="_SA1DAKBREeK9y_k9g5Mqqg"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Nc2xcKBlEeKWE8rOHgFS-g" featurename="bindingTables" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
     <elements xsi:type="commands:BindingTable" xmi:id="_RmxNIKBlEeKWE8rOHgFS-g" elementId="org.eclipse.e4mf.edit.ui.bindingtable.0" bindingContext="_Y-awIKBlEeKWE8rOHgFS-g">

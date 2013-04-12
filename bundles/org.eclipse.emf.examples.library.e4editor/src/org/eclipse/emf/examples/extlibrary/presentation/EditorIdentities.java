@@ -2,7 +2,7 @@ package org.eclipse.emf.examples.extlibrary.presentation;
 
 /**
  * Holds identities which are required for lookup and program created
- * Application model entities. It's not the complete list. 
+ * Application model entities. It's not the complete list.
  * 
  * @author Christophe Bouhier
  */
@@ -30,10 +30,16 @@ public interface EditorIdentities {
 	/** The ID of the separator which acts as a marker to insert after */
 	public static final String EDIT_SEPARATOR_ID = "org.eclipse.emf.examples.library.e4editor.menuseparator.edit";
 
+	/** The ID of the separator for global handlers */
+	public static final String LOAD_RESOURCE_SEPARATOR_ID = "org.eclipse.e4mf.edit.ui.menuseparator.loadResource";
+
+	/** The ID of the load resource menu item **/
+	public static final String LOAD_RESOURCE_ID = "org.eclipse.e4mf.edit.ui.handledmenuitem.loadResource";
+
 	/** A collection of Global Handler ID's **/
 	public static final String[] GLOBAL_HANDLERS = new String[] {
-			REFRESH_MENU_ID, SHOW_PROPERTIES_MENU_ID, SHOW_OUTLINE_MENU_ID,
-			EDIT_SEPARATOR_ID };
+			LOAD_RESOURCE_ID, LOAD_RESOURCE_SEPARATOR_ID, REFRESH_MENU_ID,
+			SHOW_PROPERTIES_MENU_ID, SHOW_OUTLINE_MENU_ID, EDIT_SEPARATOR_ID };
 
 	/** Our main window */
 	public static final String MAIN_WINDOW_ID = "org.eclipse.emf.examples.library.e4editor.trimmedwindow.main";

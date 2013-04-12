@@ -1,11 +1,9 @@
 package org.eclipse.emf.examples.extlibrary.presentation;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
 
 import javax.inject.Inject;
@@ -15,6 +13,7 @@ import org.eclipse.e4.core.contexts.ContextFunction;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.tools.helpers.E4ToolsHelper;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -26,9 +25,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.menu.MDirectMenuItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
-import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
-import org.eclipse.e4.ui.model.application.ui.menu.MMenuSeparator;
 import org.eclipse.e4.ui.model.application.ui.menu.MPopupMenu;
 import org.eclipse.e4.ui.model.application.ui.menu.impl.MenuFactoryImpl;
 import org.eclipse.e4.ui.workbench.UIEvents;
@@ -38,9 +35,8 @@ import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.e4.ui.workbench.modeling.ISelectionListener;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateChildAction;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateSiblingAction;
+import org.eclipse.e4mf.edit.ui.e4.action.EditingDomainContribution;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -85,6 +81,13 @@ public class EditorSupport extends ContextFunction implements
 	@Optional
 	private EditingDomain editingDomain;
 
+	@Inject
+	@Optional
+	private EditingDomainContribution editingDomainContribution;
+
+	@Inject
+	private E4ToolsHelper helpMeWith;
+
 	/**
 	 * A Map of Actions with no specific implementation, but acts as a marker
 	 * for injection in objects contributed to MMenuElement's
@@ -106,8 +109,9 @@ public class EditorSupport extends ContextFunction implements
 					.setElementId(EditorIdentities.CHILD_CREATE_ID);
 
 		}
+
 		depopulateManager(createChildMenuManager);
-		populateManager(createChildMenuManager, createChildActionsMap, null);
+		populateManager(createChildMenuManager, createChildActionsMap);
 
 		return createChildMenuManager;
 	}
@@ -121,7 +125,7 @@ public class EditorSupport extends ContextFunction implements
 					.setElementId(EditorIdentities.SIBLING_CREATE_ID);
 		}
 		depopulateManager(createSiblingMenuManager);
-		populateManager(createSiblingMenuManager, createSiblingActionsMap, null);
+		populateManager(createSiblingMenuManager, createSiblingActionsMap);
 
 		return createSiblingMenuManager;
 	}
@@ -147,15 +151,9 @@ public class EditorSupport extends ContextFunction implements
 
 				System.out.println("EMF Editor support activated: "
 						+ this.hashCode());
-				Object contribution = part.getObject();
+
 				// Fill the context menu with some entries.
 				populateContextMenu(part);
-				// Update the registration to the EMenuService, as we are
-				// otherwise not known.
-				if (contribution instanceof EXTLibraryEditor) {
-					((EXTLibraryEditor) contribution)
-							.updateContextMenuRegistration();
-				}
 
 				// Selection updates.
 				selectionService.addSelectionListener(this);
@@ -179,112 +177,58 @@ public class EditorSupport extends ContextFunction implements
 
 	private void populateContextMenu(MPart part) {
 
-		MPopupMenu pum = findPopupMenu(part, EditorIdentities.EDITOR_POPUP_ID);
-		pum.setWidget(null); // Clean the widget. (TODO register bug).
-		pum.getChildren().clear(); // Clear the menu, we re-populate.
+		// Re-create the menu each time, as clearing is not supported.
+		MPopupMenu pum = helpMeWith.findPopupMenu(part,
+				EditorIdentities.EDITOR_POPUP_ID);
 
 		if (pum != null) {
+			part.getMenus().remove(pum);
+		}
+
+		pum = createContectMenu();
+		part.getMenus().add(pum);
+
+		if (pum != null) {
+			if (createChildMenuManager != null) {
+				pum.getChildren().add(
+						helpMeWith.cloneMenu(createChildMenuManager));
+			}
+			if (createSiblingMenuManager != null) {
+				pum.getChildren().add(
+						helpMeWith.cloneMenu(createSiblingMenuManager));
+			}
+			// populateManager(pum, createChildActionsMap);
+			// populateManager(pum, createSiblingActionsMap);
 			addGlobalHandlers(pum);
 		}
 
-	}
-
-	/**
-	 * @See https://bugs.eclipse.org/bugs/show_bug.cgi?id=383403
-	 * @param uiElement
-	 * @param id
-	 * @return
-	 */
-	private MMenuElement findMenu(MUIElement uiElement, String id) {
-		if (uiElement instanceof MMenuElement
-				&& uiElement.getElementId().equals(id)) {
-			return (MMenuElement) uiElement;
+		// Update the registration to the EMenuService, as we are
+		// otherwise not known.
+		Object contribution = part.getObject();
+		if (contribution instanceof EXTLibraryEditor) {
+			((EXTLibraryEditor) contribution).updateContextMenuRegistration();
 		}
 
-		if (uiElement instanceof MTrimmedWindow) {
-			MMenuElement findMenu = findMenu(
-					((MTrimmedWindow) uiElement).getMainMenu(), id);
-			if (findMenu != null) {
-				return findMenu;
-			}
-
-		} else if (uiElement instanceof MPart) {
-			List<MMenu> menus = ((MPart) uiElement).getMenus();
-			for (MMenu mm : menus) {
-				MMenuElement findMenu = findMenu(mm, id);
-				if (findMenu != null) {
-					return findMenu;
-				}
-			}
-		} else if (uiElement instanceof MMenu) {
-			List<MMenuElement> children = ((MMenu) uiElement).getChildren();
-			for (MMenuElement me : children) {
-				MMenuElement findMenu = findMenu(me, id);
-				if (findMenu != null) {
-					return findMenu;
-				}
-			}
-		}
-		return null;
-
-	}
-
-	/**
-	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=383403
-	 * @param part
-	 * @param id
-	 * @return
-	 */
-	private MPopupMenu findPopupMenu(MPart part, String id) {
-
-		MPopupMenu pum = null;
-		for (MMenuElement me : part.getMenus()) {
-			if (me instanceof MPopupMenu
-					&& ((MPopupMenu) me).getElementId().equals(id)) {
-				pum = (MPopupMenu) me;
-			}
-		}
-		return pum;
 	}
 
 	private void addGlobalHandlers(MMenu menu) {
 
 		// Find the menu entries for Refresh, Show Properties etc....
 		// Costly, has we walk the full hierarchy, does are in a fragment.
-		MUIElement editor = modelService.find(EditorIdentities.MAIN_WINDOW_ID,
-				application);
-		if (editor instanceof MTrimmedWindow) {
-			System.out.println("Adding global handlers");
-			menu.getChildren().addAll(locateGlobalHandlers(editor));
-		}
-		
-		// CB TODO, Deal with this. 
-//		super.addGlobalHandler(menu);
-		
-		
-	}
+		MUIElement trimmedWindow = modelService.find(
+				EditorIdentities.MAIN_WINDOW_ID, application);
 
-	/**
-	 * Locates the global handlers, creates a copy and returns a collection.
-	 * 
-	 * 
-	 * 
-	 * @See EditorIdentities
-	 * @param editor
-	 * @return
-	 */
-	private Collection<MMenuElement> locateGlobalHandlers(MUIElement editor) {
-
-		List<MMenuElement> globalHandlers = new ArrayList<MMenuElement>();
-
-		for (String id : EditorIdentities.GLOBAL_HANDLERS) {
-			MMenuElement me = this.findMenu(editor, id);
-			if (me != null) {
-				globalHandlers.add(this.cloneMenu(me));
+		if (trimmedWindow instanceof MTrimmedWindow) {
+			if (editingDomainContribution != null) {
+				editingDomainContribution.addGlobalHandlers(
+						(MTrimmedWindow) trimmedWindow, menu);
 			}
+			System.out.println("Adding EMF Editor global handlers");
+			menu.getChildren().addAll(
+					helpMeWith.locateGlobalHandlers(
+							EditorIdentities.GLOBAL_HANDLERS,
+							(MTrimmedWindow) trimmedWindow));
 		}
-
-		return globalHandlers;
 	}
 
 	public void selectionChanged(MPart part, Object object) {
@@ -324,28 +268,8 @@ public class EditorSupport extends ContextFunction implements
 					.println("EMF Editor selection changed sibling menu size: "
 							+ createSiblingMenuManager.getChildren().size());
 
-			// Make a copy and add it to the popup menu.
-			MUIElement find = modelService.find(
-					EditorIdentities.EDITOR_POPUP_ID, part);
-			if (find instanceof MPopupMenu) {
-				// EObject copyOfChildMenu = dupEntries(createChildMenuManager);
-				// EObject copyOfSiblingMenu =
-				// dupEntries(createSiblingMenuManager);
-
-				// TODO Add to the popup.
-			}
+			populateContextMenu(part);
 		}
-	}
-
-	/**
-	 * Copy the menu entry to re-use elsewhere.
-	 * 
-	 * @param menuManager
-	 * @return
-	 */
-	protected MMenuElement cloneMenu(MMenuElement menuManager) {
-		EObject copy = EcoreUtil.copy((EObject) menuManager);
-		return (MMenuElement) copy;
 	}
 
 	private void depopulateManager(MMenu menuManager) {
@@ -363,18 +287,10 @@ public class EditorSupport extends ContextFunction implements
 	 * 
 	 * @generated
 	 */
-	public void populateManager(MMenu manager, ActionMap actionMap,
-			String contributionID) {
+	public void populateManager(MMenu manager, ActionMap actionMap) {
 		if (actionMap != null) {
 			for (Entry<String, IAction> entry : actionMap.entrySet()) {
-				if (contributionID != null) {
-					// manager.getChildren().add(e)
-					// manager.insertBefore(contributionID, action);
-				} else {
-					// manager.add(action);
-					addMenuEntry(manager, entry);
-				}
-
+				addMenuEntry(manager, entry);
 			}
 		}
 	}
@@ -460,18 +376,23 @@ public class EditorSupport extends ContextFunction implements
 		// part.setTooltip(input.getTooltip());
 		part.setCloseable(true);
 
-		// Add a menu programmatically, which we bind to a control with the
-		// EMenuService,
-		// and to which we contribute, whenever the part becomes active.
-		MMenu menu = MenuFactoryImpl.eINSTANCE.createPopupMenu();
-		menu.setElementId(EditorIdentities.EDITOR_POPUP_ID);
-		part.getMenus().add(menu);
+		MPopupMenu createContectMenu = createContectMenu();
+		part.getMenus().add(createContectMenu);
 
 		// Add the part to the stack.
 		stack.getChildren().add(part);
 		MPart showPart = partService.showPart(part,
 				EPartService.PartState.ACTIVATE);
 		return showPart != null;
+	}
+
+	private MPopupMenu createContectMenu() {
+		// Add a menu programmatically, which we bind to a control with the
+		// EMenuService,
+		// and to which we contribute, whenever the part becomes active.
+		MPopupMenu menu = MenuFactoryImpl.eINSTANCE.createPopupMenu();
+		menu.setElementId(EditorIdentities.EDITOR_POPUP_ID);
+		return menu;
 	}
 
 	public String[] openFilePathDialog(Shell shell, int style,

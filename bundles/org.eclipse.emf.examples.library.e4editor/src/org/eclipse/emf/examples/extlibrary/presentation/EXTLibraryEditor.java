@@ -86,6 +86,7 @@ import org.eclipse.swt.dnd.FileTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
 import org.osgi.service.event.Event;
@@ -1904,9 +1905,15 @@ public class EXTLibraryEditor implements IEditingDomainProvider,
 	}
 
 	public void updateContextMenuRegistration() {
-		if (currentViewer != null)
+		if (currentViewer != null) {
+//			Menu menu = currentViewer.getControl().getMenu();
+//			for(MenuItem mi : menu.getItems()){
+//				mi.dispose();
+//			}
+
 			menuService.registerContextMenu(currentViewer.getControl(),
 					EditorIdentities.EDITOR_POPUP_ID);
+		}
 
 	}
 }

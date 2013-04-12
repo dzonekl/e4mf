@@ -76,8 +76,8 @@ public class SWTOutlinePart implements ISelectionChangedListener {
 			// accordingly.
 			Object object = ((IStructuredSelection) selection)
 					.getFirstElement();
-//			System.out.println("Outline, setting selection: " + object);
-//			selectionService.setSelection(object);
+			System.out.println("Outline, setting selection: " + object);
+			selectionService.setSelection(object);
 		}
 	}
 
