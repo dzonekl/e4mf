@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_WyggsKNvEeK-uPNW2-x-Kw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_sXivcKNvEeK-uPNW2-x-Kw" featurename="children" parentElementId="org.eclipse.emf.examples.library.e4editor.partstack.properties">
+    <elements xsi:type="basic:Part" xmi:id="_v3YTYKNvEeK-uPNW2-x-Kw" elementId="org.eclipse.e4.tools.properties.part.properties" contributionURI="bundleclass://org.eclipse.e4.tools.properties/org.eclipse.e4.tools.properties.PropertiesPart" label="Properties" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/eview16/prop_ps.gif" closeable="true"/>
+  </fragments>
+</fragment:ModelFragments>
