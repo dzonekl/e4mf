@@ -47,5 +47,6 @@
     <elements xsi:type="commands:Handler" xmi:id="_zkTmkKFKEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.cut" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CutHandler" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_EPqB0KN1EeKnq8UUfCP01A" elementId="org.eclipse.e4mf.edit.ui.handler.delete" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.DeleteHandler" command="_kEh9MKBKEeK9y_k9g5Mqqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_yWYO8KN7EeKnq8UUfCP01A" elementId="org.eclipse.e4mf.edit.ui.handler.0" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.SelectAllHandler" command="_kSvYUKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="__1jTYKOHEeKvgomZMld7dQ" elementId="org.eclipse.e4mf.edit.ui.handler.undo" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.UndoHandler" command="_h1FDEKBKEeK9y_k9g5Mqqg"/>
   </fragments>
 </fragment:ModelFragments>
