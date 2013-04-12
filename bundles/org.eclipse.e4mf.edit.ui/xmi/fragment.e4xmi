@@ -42,8 +42,10 @@
     <elements xsi:type="commands:BindingContext" xmi:id="_Y-awIKBlEeKWE8rOHgFS-g" elementId="org.eclipse.ui.contexts.window" name="Window"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Z1j3oKEiEeKWZrq3lrURUg" featurename="handlers" parentElementId="org.eclipse.emf.examples.library.e4editor.application">
-    <elements xsi:type="commands:Handler" xmi:id="_elFh0KEiEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.0" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CopyHandler" command="_jj6jcKBKEeK9y_k9g5Mqqg"/>
-    <elements xsi:type="commands:Handler" xmi:id="_FntIIKErEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.1" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.PasteHandler" command="_jzcNMKBKEeK9y_k9g5Mqqg"/>
-    <elements xsi:type="commands:Handler" xmi:id="_zkTmkKFKEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.2" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CutHandler" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_elFh0KEiEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.copy" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CopyHandler" command="_jj6jcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_FntIIKErEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.paste" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.PasteHandler" command="_jzcNMKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_zkTmkKFKEeKWZrq3lrURUg" elementId="org.eclipse.e4mf.edit.ui.handler.cut" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.CutHandler" command="_jQsFcKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_EPqB0KN1EeKnq8UUfCP01A" elementId="org.eclipse.e4mf.edit.ui.handler.delete" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.DeleteHandler" command="_kEh9MKBKEeK9y_k9g5Mqqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_yWYO8KN7EeKnq8UUfCP01A" elementId="org.eclipse.e4mf.edit.ui.handler.0" contributionURI="bundleclass://org.eclipse.e4mf.edit.ui/org.eclipse.e4mf.edit.ui.e4.action.SelectAllHandler" command="_kSvYUKBKEeK9y_k9g5Mqqg"/>
   </fragments>
 </fragment:ModelFragments>

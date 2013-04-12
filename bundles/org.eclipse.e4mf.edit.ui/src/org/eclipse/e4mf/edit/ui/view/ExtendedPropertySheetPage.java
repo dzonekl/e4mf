@@ -16,6 +16,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.e4.tools.properties.IPropertyDescriptor;
+import org.eclipse.e4.tools.properties.IPropertySourceProvider;
+import org.eclipse.e4.tools.properties.PropertySheetEntry;
+import org.eclipse.e4.tools.properties.PropertySheetPage;
 import org.eclipse.e4mf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.e4mf.edit.ui.provider.DiagnosticDecorator;
 import org.eclipse.e4mf.edit.ui.provider.ExtendedImageRegistry;
@@ -35,11 +39,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.eclipse.ui.views.properties.PropertySheetEntry;
-import org.eclipse.ui.views.properties.PropertySheetPage;
 
 /**
  * This property sheet page has an additional button in its local toolbar that locates the value of the

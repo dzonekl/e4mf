@@ -1,6 +1,7 @@
 package org.eclipse.e4mf.edit.ui.e4.action;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import org.eclipse.e4.core.contexts.ContextFunction;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -11,6 +12,7 @@ import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuElement;
 
 @SuppressWarnings("restriction")
+@Singleton
 public class EditingDomainContribution extends ContextFunction {
 
 	// Either lookup the entries one by one or locate the edit menu and clone it
@@ -46,6 +48,16 @@ public class EditingDomainContribution extends ContextFunction {
 			MMenuElement cloneEditMenu = helpMeWith.cloneMenu(editMenu);
 			menu.getChildren().add(cloneEditMenu);
 		}
-
 	}
+	
+	 /**
+	   * This determines whether or not the delete action should clean up all references to the deleted objects.
+	   * It is false by default, to provide the same beahviour, by default, as in EMF 2.1 and before.
+	   * You should probably override this method to return true, in order to get the new, more useful beahviour.
+	   * @since 2.2
+	   */
+	  protected boolean removeAllReferencesOnDelete()
+	  {
+	    return false;
+	  }
 }

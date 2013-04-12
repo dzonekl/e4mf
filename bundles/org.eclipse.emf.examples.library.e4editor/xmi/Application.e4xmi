@@ -7,9 +7,7 @@
           <children xsi:type="basic:PartStack" xmi:id="_S1SDMJ06EeKoLt6wIuRNag" elementId="org.eclipse.emf.examples.library.e4editor.partstack.editor.stack"/>
           <children xsi:type="basic:PartSashContainer" xmi:id="_6fF1MJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partsashcontainer.1">
             <children xsi:type="basic:PartStack" xmi:id="_7KHvMJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partstack.outline"/>
-            <children xsi:type="basic:PartStack" xmi:id="_7nscAJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partstack.properties">
-              <children xsi:type="basic:Part" xmi:id="_8T8eAJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.part.properties" contributionURI="bundleclass://org.eclipse.emf.examples.library.e4editor/org.eclipse.emf.examples.extlibrary.presentation.PropertiesPart" label="Properties" iconURI="platform:/plugin/org.eclipse.e4.tools.resources/icons/full/eview16/prop_ps.gif"/>
-            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_7nscAJupEeKqGYqEcfwjbA" elementId="org.eclipse.emf.examples.library.e4editor.partstack.properties"/>
           </children>
         </children>
       </children>

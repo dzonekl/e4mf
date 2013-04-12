@@ -54,8 +54,8 @@ public class E4ToolsHelper extends ContextFunction {
 	}
 
 	/**
-	 * Copy the menu entry to re-use elsewhere.
-	 * FIXME, Dangerous as it creates duplicate UIElement ID's...
+	 * Copy the menu entry to re-use elsewhere. FIXME, Dangerous as it creates
+	 * duplicate UIElement ID's...
 	 * 
 	 * @param menuManager
 	 * @return
@@ -122,7 +122,8 @@ public class E4ToolsHelper extends ContextFunction {
 	}
 
 	private boolean match(MUIElement uiElement, String id) {
-		return uiElement.getElementId().equals(id);
+		String idToMatch = uiElement.getElementId();
+		return idToMatch != null ? idToMatch.equals(id) : false;
 	}
 
 }

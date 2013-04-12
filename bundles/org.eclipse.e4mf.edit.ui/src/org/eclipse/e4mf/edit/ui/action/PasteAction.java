@@ -13,8 +13,6 @@ package org.eclipse.e4mf.edit.ui.action;
 
 import java.util.Collection;
 
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.e4mf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;

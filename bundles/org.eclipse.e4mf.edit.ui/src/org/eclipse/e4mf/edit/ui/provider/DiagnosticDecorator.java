@@ -76,7 +76,6 @@ import org.eclipse.swt.browser.LocationEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * A {@link ILabelDecorator label decorator} for associating {@link Diagnostic diagnostic} decorations with a {@link StructuredViewer structured viewer}'s content labels.

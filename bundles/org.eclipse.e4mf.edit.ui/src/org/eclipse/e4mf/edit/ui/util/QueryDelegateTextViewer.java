@@ -13,6 +13,7 @@ package org.eclipse.e4mf.edit.ui.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.e4mf.edit.ui.util.QueryDelegateTextViewer.Factory;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.swt.widgets.Composite;

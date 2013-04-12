@@ -15,11 +15,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.jface.viewers.IStructuredSelection;
-
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.IStructuredSelection;
 
 
 /*

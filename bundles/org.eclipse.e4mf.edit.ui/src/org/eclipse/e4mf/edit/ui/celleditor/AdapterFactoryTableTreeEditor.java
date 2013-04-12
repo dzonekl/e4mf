@@ -11,6 +11,12 @@
 package org.eclipse.e4mf.edit.ui.celleditor;
 
 
+import org.eclipse.e4mf.common.ui.celleditor.ExtendedTableTreeEditor;
+import org.eclipse.e4mf.common.ui.viewer.ExtendedTableTreeViewer;
+import org.eclipse.e4mf.common.ui.viewer.ExtendedTableTreeViewer.ExtendedTableTreeItem;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TableTree;
 import org.eclipse.swt.custom.TableTreeItem;
@@ -35,12 +41,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.e4mf.common.ui.celleditor.ExtendedTableTreeEditor;
-import org.eclipse.e4mf.common.ui.viewer.ExtendedTableTreeViewer;
-import org.eclipse.e4mf.common.ui.viewer.ExtendedTableTreeViewer.ExtendedTableTreeItem;
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 
 /**

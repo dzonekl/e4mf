@@ -11,13 +11,11 @@
 package org.eclipse.e4mf.edit.ui.action;
 
 
-import org.eclipse.jface.action.Action;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.e4mf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.jface.action.Action;
 
 
 /**

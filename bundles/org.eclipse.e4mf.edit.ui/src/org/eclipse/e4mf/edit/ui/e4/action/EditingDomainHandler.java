@@ -9,6 +9,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -22,12 +23,13 @@ public abstract class EditingDomainHandler {
 	@CanExecute
 	public boolean canExecute(
 			@Named(IServiceConstants.ACTIVE_SELECTION) Object selection,
-			IEclipseContext context) {
-		editingDomain = context.get(EditingDomain.class);
+			IEclipseContext context, @Optional EditingDomain editingDomain) {
 
 		if (editingDomain == null) {
 			return false;
 		}
+		
+		this.editingDomain = editingDomain;
 
 		List<Object> collection = new ArrayList<Object>();
 		collection.add(selection);

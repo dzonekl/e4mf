@@ -16,6 +16,21 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.e4.tools.properties.IPropertyDescriptor;
+import org.eclipse.e4mf.common.ui.celleditor.ExtendedComboBoxCellEditor;
+import org.eclipse.e4mf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.e4mf.edit.ui.EMFEditUIPlugin;
+import org.eclipse.e4mf.edit.ui.celleditor.FeatureEditorDialog;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.viewers.CellEditor;
@@ -32,21 +47,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.eclipse.e4mf.common.ui.celleditor.ExtendedComboBoxCellEditor;
-import org.eclipse.e4mf.common.ui.celleditor.ExtendedDialogCellEditor;
-import org.eclipse.e4mf.edit.ui.EMFEditUIPlugin;
-import org.eclipse.e4mf.edit.ui.celleditor.FeatureEditorDialog;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 
 /**

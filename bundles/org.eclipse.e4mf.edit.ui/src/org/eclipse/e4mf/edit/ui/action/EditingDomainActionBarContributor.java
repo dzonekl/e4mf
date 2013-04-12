@@ -11,6 +11,8 @@
 package org.eclipse.e4mf.edit.ui.action;
 
 
+import org.eclipse.e4.tools.properties.IPropertySheetPage;
+import org.eclipse.e4.tools.properties.PropertySheet;
 import org.eclipse.e4mf.edit.ui.provider.DiagnosticDecorator;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -23,17 +25,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IPropertyListener;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.IViewPart;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.actions.ActionFactory;
-import org.eclipse.ui.part.IPage;
-import org.eclipse.ui.part.MultiPageEditorActionBarContributor;
-import org.eclipse.ui.views.properties.IPropertySheetPage;
-import org.eclipse.ui.views.properties.PropertySheet;
 
 
 /**

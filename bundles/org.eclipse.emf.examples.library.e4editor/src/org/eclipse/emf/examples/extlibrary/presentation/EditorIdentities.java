@@ -10,6 +10,10 @@ public interface EditorIdentities {
 
 	// LOOKUP ID's
 
+	public static final String PROPERTIES_PART_ID = "org.eclipse.e4.tools.properties.part.properties";
+
+	public static final String OUTLINE_PART_ID = "org.eclipse.e4.tools.part.outline";
+
 	/**
 	 * The parent ID of the part stack, used to re-create the stack if it's
 	 * closed

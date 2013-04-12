@@ -36,9 +36,11 @@ import org.eclipse.e4.ui.workbench.modeling.ISelectionListener;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateChildAction;
 import org.eclipse.e4mf.edit.ui.e4.action.CreateSiblingAction;
 import org.eclipse.e4mf.edit.ui.e4.action.EditingDomainContribution;
+import org.eclipse.e4mf.edit.ui.e4.action.StaticSelectionCommandAction;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
@@ -297,9 +299,16 @@ public class EditorSupport extends ContextFunction implements
 
 	protected void addMenuEntry(MMenu manager, Entry<String, IAction> entry) {
 
+		IAction action = entry.getValue(); 
+		
 		MDirectMenuItem dynamicItem = MMenuFactory.INSTANCE
 				.createDirectMenuItem();
 		dynamicItem.setLabel(entry.getValue().getText());
+		
+		// We need a URI for the image. 
+		ImageDescriptor imageDescriptor = action.getImageDescriptor();
+		
+//		dynamicItem.setIconURI()
 		dynamicItem.setContributorURI(EditorIdentities.PLUGIN_ID);
 		dynamicItem
 				.setContributionURI(EditorIdentities.CREATION_CONTRIBUTION_URI);

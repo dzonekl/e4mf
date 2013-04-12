@@ -11,6 +11,9 @@
 package org.eclipse.e4mf.edit.ui.celleditor;
 
 
+import org.eclipse.e4mf.common.ui.celleditor.ExtendedTreeEditor;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.edit.provider.IUpdateableItemText;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
@@ -23,9 +26,6 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
-import org.eclipse.e4mf.common.ui.celleditor.ExtendedTreeEditor;
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.provider.IUpdateableItemText;
 
 
 /**

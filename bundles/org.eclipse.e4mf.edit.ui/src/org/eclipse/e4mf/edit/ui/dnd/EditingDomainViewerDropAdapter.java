@@ -16,6 +16,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.resources.IResource;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.edit.command.DragAndDropCommand;
+import org.eclipse.emf.edit.command.DragAndDropFeedback;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
@@ -32,14 +39,6 @@ import org.eclipse.swt.widgets.Item;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Widget;
-
-import org.eclipse.core.resources.IResource;
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.edit.command.DragAndDropCommand;
-import org.eclipse.emf.edit.command.DragAndDropFeedback;
-import org.eclipse.emf.edit.domain.EditingDomain;
 
 
 /**
